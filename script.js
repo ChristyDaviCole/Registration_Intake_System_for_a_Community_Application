@@ -262,6 +262,18 @@ const sampleUsers = [
         username: "fiona_g",
         phone: "555-789-0123",
         promoCode: ""
+    },
+    {
+        name: "Grace Miller",
+        username: "grace@123",
+        phone: "555-234-5678",
+        promoCode: "SUMMER"
+    },
+    {
+        name: "Henry Wilson",
+        username: "henry_w",
+        phone: "555 234 5678",
+        promoCode: "summer"
     }
 ];
 
