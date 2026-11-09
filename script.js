@@ -107,6 +107,8 @@ Critically evaluate any AI suggestions: ensure suggested patterns use concepts y
 
 "use strict";
 
+// Name Validation
+
 function validateName(name) {
 
     const namePattern = /^[a-zA-Z ]{2,}$/;
@@ -125,12 +127,32 @@ function validateUsername(username) {
 
 }
 
+// Phone Validation
+
+function validatePhone(phone) {
+
+    const phonePattern = /^\d{3}[-.]?\d{3}[-.]?\d{4}$/;
+
+    return phonePattern.test(phone);
+
+}
+
+// Promo Code Validation
+
+function validatePromoCode(promo) {
+
+    const promoPattern = /^SUMMER$/i;
+
+    return promoPattern.test(promo);
+
+}
+
 // Test Name Validation
 
 console.log("Name Validation:");
 console.log(validateName("Alex Johnson"));
 console.log(validateName("B"));
-console.log(validateName("Dana Skully"));
+console.log(validateName("Dana Scully"));
 
 // Test Username Validation
 
@@ -139,3 +161,20 @@ console.log(validateUsername("alex_j"));
 console.log(validateUsername("da"));
 console.log(validateUsername("the_riddler_super_fan"));
 
+// Test Phone Validation
+
+console.log("Phone Validation:");
+console.log(validatePhone("555-234-5678"));
+console.log(validatePhone("555.345.6789"));
+console.log(validatePhone("5554567890"));
+console.log(validatePhone("555-678-901"));
+
+// Test Promo Code Validation
+
+console.log("Promo Code Validation:");
+console.log(validatePromoCode("SUMMER"));
+console.log(validatePromoCode("summer"));
+console.log(validatePromoCode("SuMmEr"));
+console.log(validatePromoCode("SUMMER2026"));
+console.log(validatePromoCode(""));
+console.log(validatePromoCode(null));

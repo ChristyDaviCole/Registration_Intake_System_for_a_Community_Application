@@ -4,7 +4,7 @@ I created 2 validation functions using regular expressions and the .test method.
 
 Journal Prompt 2: What did you accomplish in this phase? Why is the case-insensitive flag i cleaner than converting strings with .toLowerCase() or writing alternate variations in an if statement?
 
-
+Created 2 more validation functions using regular expressions. Case-insensitive flag i is cleaner becuase it ignores the difference between upper & lowercase letters without having to convert the input to either upper or lower before testing.
 
 Journal Prompt 3: What did you accomplish in this phase? What is the conceptual difference between testing a string with .test() and extracting/reformatting data using capturing groups and backreferences?
 
