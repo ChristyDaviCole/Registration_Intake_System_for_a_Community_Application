@@ -137,9 +137,31 @@ function validatePhone(phone) {
 
 }
 
+// Phone Number Formatting
+
+function formatPhoneNumber(phone) {
+
+    if (!validatePhone(phone)) {
+
+        return null;
+
+    }
+
+    const phonePattern = /^(\d{3})[-.]?(\d{3})[-.]?(\d{4})$/;
+
+    return phone.replace(phonePattern, "($1) $2-$3");
+
+}
+
 // Promo Code Validation
 
 function validatePromoCode(promo) {
+
+    if (!promo) {
+
+        return false;
+
+    }
 
     const promoPattern = /^SUMMER$/i;
 
@@ -178,3 +200,11 @@ console.log(validatePromoCode("SuMmEr"));
 console.log(validatePromoCode("SUMMER2026"));
 console.log(validatePromoCode(""));
 console.log(validatePromoCode(null));
+
+// Test Phone Number FOrmatting
+
+console.log("Phone Number Formatting");
+console.log(formatPhoneNumber("555-234-5678"));
+console.log(formatPhoneNumber("555.345.6789"));
+console.log(formatPhoneNumber("5554567890"));
+console.log(formatPhoneNumber("555-678-901"));

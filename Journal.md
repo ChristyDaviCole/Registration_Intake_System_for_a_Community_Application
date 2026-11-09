@@ -8,7 +8,7 @@ Created 2 more validation functions using regular expressions. Case-insensitive 
 
 Journal Prompt 3: What did you accomplish in this phase? What is the conceptual difference between testing a string with .test() and extracting/reformatting data using capturing groups and backreferences?
 
-
+In this phase, I created the formatPhoneNumber() function to put valid numbers into all the same format. The .test() method checks if a string matches a pattern as a true or false test. Capturing groups/backreferences allow us to rearrange certain parts of a string into a different format. 
 
 Journal Prompt 4: How did you design your processRegistration() function? Looking back across Phases 1 through 4, how did building and verifying individual regular expressions first make assembling the final pipeline easier?
 
