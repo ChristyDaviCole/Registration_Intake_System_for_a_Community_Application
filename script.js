@@ -169,6 +169,102 @@ function validatePromoCode(promo) {
 
 }
 
+function processRegistration(user) {
+
+    const errors = [];
+
+    // Validate name
+    if (!validateName(user.name)) {
+
+        errors.push("Invalid name");
+
+    }
+
+    // Validate username
+    if (!validateUsername(user.username)) {
+
+        errors.push("Invalid username");
+
+    }
+
+    // Validate phone
+    if (!validatePhone(user.phone)) {
+
+        errors.push("Invalid phone");
+
+    }
+
+    // Check for validation errors
+    if (errors.length > 0) {
+
+        return {
+
+            success: false,
+            errors: errors
+
+        };
+
+    }
+
+    // Return successful registration
+
+    return {
+
+        success: true,
+        data: {
+
+            name: user.name,
+            username: user.username,
+            phone: formatPhoneNumber(user.phone),
+            discountApplied: validatePromoCode(user.promoCode)
+
+        }
+
+    };
+
+}
+
+// Sample User Data
+
+const sampleUsers = [
+    {
+        name: "Alex Johnson",
+        username: "alex_j",
+        phone: "555-234-5678",
+        promoCode: "SUMMER"
+    },
+    {
+        name: "B",
+        username: "cool_user_123",
+        phone: "555.345.6789",
+        promoCode: "summer"
+    },
+    {
+        name: "Charlie Brown",
+        username: "charlie!brown",
+        phone: "5554567890",
+        promoCode: "SUMMER2026"
+    },
+    {
+        name: "Dana Scully",
+        username: "da",
+        phone: "555-567-8901",
+        promoCode: "SuMmEr"
+    },
+    {
+        name: "Edward Nygma",
+        username: "the_riddler_super_fan",
+        phone: "555-678-901",
+        promoCode: null
+    },
+    {
+        name: "Fiona Gallagher",
+        username: "fiona_g",
+        phone: "555-789-0123",
+        promoCode: ""
+    }
+];
+
 // Test Name Validation
 
 console.log("Name Validation:");
@@ -201,10 +297,22 @@ console.log(validatePromoCode("SUMMER2026"));
 console.log(validatePromoCode(""));
 console.log(validatePromoCode(null));
 
-// Test Phone Number FOrmatting
+// Test Phone Number Formatting
 
 console.log("Phone Number Formatting");
 console.log(formatPhoneNumber("555-234-5678"));
 console.log(formatPhoneNumber("555.345.6789"));
 console.log(formatPhoneNumber("5554567890"));
 console.log(formatPhoneNumber("555-678-901"));
+
+// Test Registration Processing
+
+console.log("Registration Results:");
+
+for (const user of sampleUsers) {
+
+    const result = processRegistration(user);
+
+    console.log(result);
+
+}

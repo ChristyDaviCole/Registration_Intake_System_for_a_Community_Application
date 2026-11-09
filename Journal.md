@@ -12,6 +12,6 @@ In this phase, I created the formatPhoneNumber() function to put valid numbers i
 
 Journal Prompt 4: How did you design your processRegistration() function? Looking back across Phases 1 through 4, how did building and verifying individual regular expressions first make assembling the final pipeline easier?
 
-
+My processRegistration() function was designed to check each user info requirement using the functions created in the previous phases. If any piece of the required info was invalid, the function would use errors.push() to add an error message to the array. If everything passed the test(s), the user info was returned with the phone number formatted and if there was a promo code applied. Building and verifying individual regular expressions first made assembling the final pipeline easier becuase each function was already working correctly before being combined. This way it was easier to find problems and reduced repetitive coding.
 
 Journal Prompt 5: What bugs or unexpected results did you identify while running the full test suite? If you consulted an AI tutor for review, what advice did it provide, and what did you learn about regular expressions from this exercise?
